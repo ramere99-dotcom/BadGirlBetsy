@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bad Girls Betsy's | Mid Century & Retro Antiques | Invermay, Tasmania</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'retro-cream': '#FDF6E3',
+                        'retro-mustard': '#D4A373',
+                        'retro-teal': '#2A9D8F',
+                        'retro-orange': '#E76F51',
+                        'retro-brown': '#5D4037',
+                        'retro-pink': '#E9C46A',
+                    },
+                    fontFamily: {
+                        'display': ['Abril Fatface', 'cursive'],
+                        'body': ['Lato', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #FDF6E3;
+            color: #5D4037;
+        }
+        
+        .font-display {
+            font-family: 'Abril Fatface', cursive;
+        }
+        
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .retro-pattern {
+            background-image: radial-gradient(#D4A373 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #E76F51;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(42,157,143,0.8) 0%, rgba(215,163,115,0.8) 100%);
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .gallery-item {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .btn-retro {
+            background: linear-gradient(135deg, #E76F51 0%, #D4A373 100%);
+            transition: all 0.3s;
+        }
+        
+        .btn-retro:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(231,111,81,0.3);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-retro-cream/95 backdrop-blur-sm shadow-md border-b-4 border-retro-mustard">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <h1 class="font-display text-3xl md:text-4xl text-retro-brown tracking-wide">
+                        Bad Girls <span class="text-retro-orange">Betsy's</span>
+                    </h1>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="nav-link text-retro-brown font-bold hover:text-retro-orange transition">Home</a>
+                    <a href="#about" class="nav-link text-retro-brown font-bold hover:text-retro-orange transition">About</a>
+                    <a href="#collection" class="nav-link text-retro-brown font-bold hover:text-retro-orange transition">Collection</a>
+                    <a href="#visit" class="nav-link text-retro-brown font-bold hover:text-retro-orange transition">Visit Us</a>
+                    <button class="btn-retro px-6 py-2 rounded-full text-white font-bold shadow-lg">
+                        Contact
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-retro-brown hover:text-retro-orange focus:outline-none">
+                        <i data-lucide="menu" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-retro-cream border-t border-retro-mustard">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-retro-brown font-bold hover:bg-retro-mustard/20 rounded">Home</a>
+                <a href="#about" class="block px-3 py-2 text-retro-brown font-bold hover:bg-retro-mustard/20 rounded">About</a>
+                <a href="#collection" class="block px-3 py-2 text-retro-brown font-bold hover:bg-retro-mustard/20 rounded">Collection</a>
+                <a href="#visit" class="block px-3 py-2 text-retro-brown font-bold hover:bg-retro-mustard/20 rounded">Visit Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <div class="absolute inset-0 z-0">
+            <img src="images/IMG_20260224_191252174_HDR~2.jpg" alt="Bad Girls Betsy's Store" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
+            <div class="float-animation mb-6">
+                <i data-lucide="crown" class="w-16 h-16 mx-auto text-retro-cream"></i>
+            </div>
+            <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-white text-shadow mb-6">
+                Bad Girls <span class="text-retro-pink">Betsy's</span>
+            </h2>
+            <p class="text-xl md:text-2xl text-retro-cream font-light mb-4 text-shadow">
+                Curated Mid Century & Retro Treasures
+            </p>
+            <div class="flex items-center justify-center gap-2 text-retro-cream mb-8">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                <span class="font-bold">207 Invermay Rd, Invermay, Tasmania</span>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#collection" class="btn-retro px-8 py-4 rounded-full text-white font-bold text-lg shadow-xl hover:scale-105 transition transform">
+                    Explore Collection
+                </a>
+                <a href="#visit" class="bg-retro-cream/90 text-retro-brown px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-white transition transform hover:scale-105">
+                    Find Us
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i data-lucide="chevron-down" class="w-8 h-8 text-white"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 retro-pattern">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="inline-block bg-retro-teal text-white px-4 py-2 rounded-full font-bold text-sm tracking-wider">
+                        EST. 2010
+                    </div>
+                    <h2 class="font-display text-4xl md:text-5xl text-retro-brown">
+                        Where Vintage <span class="text-retro-orange">Meets Soul</span>
+                    </h2>
+                    <p class="text-lg text-retro-brown/80 leading-relaxed">
+                        Nestled in the heart of Invermay, Bad Girls Betsy's is more than just an antique store—it's a curated journey through the golden eras of design. We specialize in authentic mid-century modern furniture, retro décor, and quirky collectibles that tell a story.
+                    </p>
+                    <p class="text-lg text-retro-brown/80 leading-relaxed">
+                        From Eames-inspired chairs to atomic-age lamps, every piece in our collection is hand-selected for its character, quality, and that undeniable cool factor. Whether you're a serious collector or just looking for that perfect statement piece, we've got something that speaks to you.
+                    </p>
+                    
+                    <div class="grid grid-cols-3 gap-4 pt-6">
+                        <div class="text-center p-4 bg-white rounded-lg shadow-md">
+                            <i data-lucide="award" class="w-8 h-8 mx-auto text-retro-orange mb-2"></i>
+                            <p class="font-bold text-retro-brown">Authentic</p>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg shadow-md">
+                            <i data-lucide="heart" class="w-8 h-8 mx-auto text-retro-teal mb-2"></i>
+                            <p class="font-bold text-retro-brown">Curated</p>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg shadow-md">
+                            <i data-lucide="sparkles" class="w-8 h-8 mx-auto text-retro-mustard mb-2"></i>
+                            <p class="font-bold text-retro-brown">Unique</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-full h-full bg-retro-mustard rounded-2xl"></div>
+                    <img src="images/IMG_20260224_191328286~2.jpg" alt="Store Interior" class="relative rounded-2xl shadow-2xl w-full object-cover h-96">
+                    <div class="absolute -bottom-6 -right-6 bg-retro-teal text-white p-6 rounded-full shadow-xl">
+                        <p class="font-display text-2xl text-center">Open<br>Now</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collection Gallery -->
+    <section id="collection" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl md:text-5xl text-retro-brown mb-4">
+                    Our <span class="text-retro-orange">Collection</span>
+                </h2>
+                <p class="text-lg text-retro-brown/70 max-w-2xl mx-auto">
+                    Browse our latest mid-century and retro finds. Each piece is one-of-a-kind and ready to add character to your space.
+                </p>
+                
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap justify-center gap-3 mt-8">
+                    <button class="filter-btn active px-6 py-2 rounded-full bg-retro-brown text-white font-bold transition" data-filter="all">All</button>
+                    <button class="filter-btn px-6 py-2 rounded-full bg-retro-cream text-retro-brown font-bold hover:bg-retro-mustard/30 transition" data-filter="furniture">Furniture</button>
+                    <button class="filter-btn px-6 py-2 rounded-full bg-retro-cream text-retro-brown font-bold hover:bg-retro-mustard/30 transition" data-filter="decor">Decor</button>
+                    <button class="filter-btn px-6 py-2 rounded-full bg-retro-cream text-retro-brown font-bold hover:bg-retro-mustard/30 transition" data-filter="lighting">Lighting</button>
+                </div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="gallery-grid">
+                <!-- Item 1 -->
+                <div class="gallery-item group cursor-pointer" data-category="furniture">
+                    <div class="relative overflow-hidden rounded-2xl bg-retro-cream">
+                        <img src="images/Messenger_creation_0EAFB2A0-14C9-4203-AB5C-AD7D7EFACC14.jpeg" alt="Mid Century Chair" class="w-full h-80 object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-retro-brown/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                            <div class="text-white">
+                                <h3 class="font-display text-xl">Teak Lounge Chair</h3>
+                                <p class="text-retro-pink font-bold">$450</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="font-bold text-retro-brown text-lg">Danish Teak Lounge Chair</h3>
+                        <p class="text-retro-brown/60 text-sm">1960s • Furniture</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="gallery-item group cursor-pointer" data-category="lighting">
+                    <div class="relative overflow-hidden rounded-2xl bg-retro-cream">
+                        <img src="images/Messenger_creation_4331453F-E8E1-4385-BCFA-A44530856E60.jpeg" alt="Retro Lamp" class="w-full h-80 object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-retro-brown/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                            <div class="text-white">
+                                <h3 class="font-display text-xl">Atomic Pendant Light</h3>
+                                <p class="text-retro-pink font-bold">$280</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="font-bold text-retro-brown text-lg">Atomic Age Pendant</h3>
+                        <p class="text-retro-brown/60 text-sm">1950s • Lighting</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="gallery-item group cursor-pointer" data-category="decor">
+                    <div class="relative overflow-hidden rounded-2xl bg-retro-cream">
+                        <img src="images/Messenger_creation_5A2427CC-2DCC-4500-82D5-D54D722E2631.jpeg" alt="Retro Art" class="w-full h-80 object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-retro-brown/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                            <div class="text-white">
+                                <h3 class="font-display text-xl">Abstract Wall Art</h3>
+                                <p class="text-retro-pink font-bold">$180</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="font-bold text-retro-brown text-lg">Geometric Wall Art</h3>
+                        <p class="text-retro-brown/60 text-sm">1970s • Decor</p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="gallery-item group cursor-pointer" data-category="furniture">
+                    <div class="relative overflow-hidden rounded-2xl bg-retro-cream">
+                        <img src="images/Messenger_creation_5B3CDB39-4BED-4A66-A1F5-BA632B00DD58.jpeg" alt="Retro Desk" class="w-full h-80 object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-retro-brown/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                            <div class="text-white">
+                                <h3 class="font-display text-xl">Executive Desk</h3>
+                                <p class="text-retro-pink font-bold">$890</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="font-bold text-retro-brown text-lg">Mid-Century Executive Desk</h3>
+                        <p class="text-retro-brown/60 text-sm">1965 • Furniture</p>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="gallery-item group cursor-pointer" data-category="decor">
+                    <div class="relative overflow-hidden rounded-2xl bg-retro-cream">
+                        <img src="images/Messenger_creation_5E4F0C72-1E81-4F7D-81DC-C9F0AE2D30CA.jpeg" alt="Retro Clock" class="w-full h-80 object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-retro-brown/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                            <div class="text-white">
+                                <h3 class="font-display text-xl">Sunburst Clock</h3>
+                                <p class="text-retro-pink font-bold">$220</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="font-bold text-retro-brown text-lg">Gold Sunburst Clock</h3>
+                        <p class="text-retro-brown/60 text-sm">1960s • Decor</p>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="gallery-item group cursor-pointer" data-category="lighting">
+                    <div class="relative overflow-hidden rounded-2xl bg-retro-cream">
+                        <img src="images/Messenger_creation_6D21DD25-75B6-4670-8A99-332A281D68F7.jpeg" alt="Table Lamp" class="w-full h-80 object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-retro-brown/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                            <div class="text-white">
+                                <h3 class="font-display text-xl">Ceramic Table Lamp</h3>
+                                <p class="text-retro-pink font-bold">$165</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="font-bold text-retro-brown text-lg">Teal Ceramic Lamp</h3>
+                        <p class="text-retro-brown/60 text-sm">1970s • Lighting</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="border-2 border-retro-brown text-retro-brown px-8 py-3 rounded-full font-bold hover:bg-retro-brown hover:text-white transition">
+                    View All Items
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visit Us Section -->
+    <section id="visit" class="py-20 bg-retro-teal/10">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <h2 class="font-display text-4xl md:text-5xl text-retro-brown">
+                        Come Say <span class="text-retro-orange">Hello</span>
+                    </h2>
+                    <p class="text-lg text-retro-brown/80">
+                        We're located in the vibrant Invermay precinct, just minutes from Launceston's CBD. Drop by to browse our ever-changing collection or chat with Betsy about that specific piece you're hunting for.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 bg-white p-4 rounded-xl shadow-sm">
+                            <div class="bg-retro-mustard/20 p-3 rounded-full">
+                                <i data-lucide="map-pin" class="w-6 h-6 text-retro-orange"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-retro-brown">Address</h3>
+                                <p class="text-retro-brown/70">207 Invermay Rd<br>Invermay, Tasmania 7248</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4 bg-white p-4 rounded-xl shadow-sm">
+                            <div class="bg-retro-mustard/20 p-3 rounded-full">
+                                <i data-lucide="clock" class="w-6 h-6 text-retro-orange"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-retro-brown">Opening Hours</h3>
+                                <p class="text-retro-brown/70">
+                                    Mon - Fri: 10am - 5pm<br>
+                                    Saturday: 10am - 4pm<br>
+                                    Sunday: Closed
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4 bg-white p-4 rounded-xl shadow-sm">
+                            <div class="bg-retro-mustard/20 p-3 rounded-full">
+                                <i data-lucide="phone" class="w-6 h-6 text-retro-orange"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-retro-brown">Contact</h3>
+                                <p class="text-retro-brown/70">(03) 6331 2345<br>hello@badgirlsbetsys.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-4 rounded-2xl shadow-xl h-96 lg:h-auto">
+                    <div class="w-full h-full bg-retro-cream rounded-xl flex items-center justify-center relative overflow-hidden">
+                        <div class="text-center z-10 p-8">
+                            <i data-lucide="map" class="w-16 h-16 text-retro-mustard mx-auto mb-4"></i>
+                            <p class="font-display text-2xl text-retro-brown mb-2">Find Us Here</p>
+                            <p class="text-retro-brown/60">207 Invermay Rd, Invermay</p>
+                            <button class="mt-4 bg-retro-teal text-white px-6 py-2 rounded-full font-bold hover:bg-retro-teal/80 transition">
+                                Get Directions
+                            </button>
+                        </div>
+                        <div class="absolute inset-0 opacity-10 retro-pattern"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-retro-brown text-retro-cream">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <i data-lucide="mail" class="w-12 h-12 mx-auto mb-4 text-retro-pink"></i>
+            <h2 class="font-display text-3xl md:text-4xl mb-4">Join the Bad Girls Club</h2>
+            <p class="mb-8 text-retro-cream/80">Get first dibs on new arrivals, vintage tips, and exclusive deals.</p>
+            
+            <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto" onsubmit="event.preventDefault(); alert('Welcome to the club!');">
+                <input type="email" placeholder="Enter your email" class="flex-1 px-6 py-3 rounded-full text-retro-brown focus:outline-none focus:ring-2 focus:ring-retro-orange" required>
+                <button type="submit" class="bg-retro-orange text-white px-8 py-3 rounded-full font-bold hover:bg-retro-orange/80 transition">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-retro-cream border-t-4 border-retro-mustard pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="md:col-span-2">
+                    <h3 class="font-display text-3xl text-retro-brown mb-4">Bad Girls Betsy's</h3>
+                    <p class="text-retro-brown/70 mb-4 max-w-sm">
+                        Tasmania's premier destination for mid-century modern and retro treasures. Every piece has a past, every purchase has a story.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-retro-mustard/20 rounded-full flex items-center justify-center hover:bg-retro-orange hover:text-white transition text-retro-brown">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-retro-mustard/20 rounded-full flex items-center justify-center hover:bg-retro-orange hover:text-white transition text-retro-brown">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-retro-mustard/20 rounded-full flex items-center justify-center hover:bg-retro-orange hover:text-white transition text-retro-brown">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-retro-brown mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-retro-brown/70">
+                        <li><a href="#home" class="hover:text-retro-orange transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-retro-orange transition">About Us</a></li>
+                        <li><a href="#collection" class="hover:text-retro-orange transition">Shop</a></li>
+                        <li><a href="#visit" class="hover:text-retro-orange transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-retro-brown mb-4">Categories</h4>
+                    <ul class="space-y-2 text-retro-brown/70">
+                        <li><a href="#" class="hover:text-retro-orange transition">Furniture</a></li>
+                        <li><a href="#" class="hover:text-retro-orange transition">Lighting</a></li>
+                        <li><a href="#" class="hover:text-retro-orange transition">Decor</a></li>
+                        <li><a href="#" class="hover:text-retro-orange transition">Collectibles</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-retro-mustard/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-retro-brown/60 text-sm">
+                    © 2024 Bad Girls Betsy's. All rights reserved.
+                </p>
+                <p class="text-retro-brown/60 text-sm flex items-center gap-1">
+                    Made with <i data-lucide="heart" class="w-4 h-4 text-retro-orange fill-current"></i> in Tasmania
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+        
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Gallery Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-retro-brown', 'text-white');
+                    b.classList.add('bg-retro-cream', 'text-retro-brown');
+                });
+                
+                // Add active class to clicked button
+                btn.classList.remove('bg-retro-cream', 'text-retro-brown');
+                btn.classList.add('bg-retro-brown', 'text-white');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+        
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+<script src="https://deepsite.hf.co/deepsite-badge.js"></script>
+</body>
+</html>
